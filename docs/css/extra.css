@@ -1,0 +1,55 @@
+/* Extra CSS for the GenePattern Notebook Documentation Pages */
+
+img[alt="image"] {
+    box-shadow: 5px 5px 10px lightgrey;
+}
+img[alt="genepattern"], img[alt="github"], img[alt="gparc"], img[alt="jupyter"], img[alt="python"] {
+    width: 50px !important;
+}
+@media screen and (max-width: 768px) {
+    #genepattern-img {
+        width: 50px;
+    }
+    #jupyter-img {
+        width: 50px;
+    }
+}
+img[alt="run"] {
+    width:40px;
+}
+img[alt="code"], img[alt="forward"] {
+    width: 30px;
+}
+.icon-home:before {
+    content: url(../img/logo.png?x=1);
+}
+.icon .icon-home {
+    height: 50px;
+}
+a:visited {
+    color: #2980B9;
+}
+.wy-menu-vertical li.current a {
+    color: gray !important;
+}
+.wy-menu-vertical li ul li a {
+    color: #b3b3b3 !important;
+}
+.wy-menu-vertical a {
+    color: #b3b3b3 !important;
+}
+.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
+    color: #fcfcfc;
+}
+h1, h2, h3, h4, h5, h6, legend {
+    margin-top:auto;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+.btn a {
+    color: white;
+}
+.hljs {
+    padding: 5px 10px !important;
+    white-space: pre !important;
+}
