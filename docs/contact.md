@@ -2,7 +2,7 @@
 ---
 
 ## Help Forum
-Join our forum, [groups.google.com/group/genepattern-help](https://groups.google.com/group/genepattern-help), to stay updated with GenePattern Notebook.  You can configure your personal [email and membership settings](https://support.google.com/groups/answer/1067205?hl=en) for the group to send updates for the group or individual topics within it.
+Join our forum, [link](link), to stay updated with g2nb.  You can configure your personal [email and membership settings](https://support.google.com/groups/answer/1067205?hl=en) for the group to send updates for the group or individual topics within it.
 
 ## Contact Us
 Please note that many common errors can be resolved by searching [this forum](https://groups.google.com/group/genepattern-help) or taking a look at our [documentation](https://gpnotebook-website-docs.readthedocs.io/en/latest)

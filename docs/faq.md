@@ -1,8 +1,8 @@
 # FAQ
 ---
 
-## Q: Is the GenePattern Notebook Worspace intended for use with Protected Health Information (PHI)?
-The GenePattern Notebook Workspace is not intended for use with Protected Health Information (PHI). If you want to perform analyses with PHI data, please see our [instructions for running a private GenePattern Notebook instance.](https://gpnotebook-website-docs.readthedocs.io/en/latest/local-installation/)
+## Q: Is g2nb intended for use with Protected Health Information (PHI)?
+g2nb is not intended for use with Protected Health Information (PHI). If you want to perform analyses with PHI data, please see our [instructions for running a private g2nb instance.](https://gpnotebook-website-docs.readthedocs.io/en/latest/local-installation/)
 
 ## Q: How do I move notebooks or other files to different directories?
 
@@ -33,9 +33,9 @@ screenshot of the code for this cell is below.
 
 ## Q: I received a "Connection Reset by Peer" Error, what does it mean?
 
-A: If you are attempting to programmatically connect to GenePattern and
+A: If you are attempting to programmatically connect to g2nb and
 receive a Connection Reset by Peer error, this is likely caused by your
-Python environment using an outdated version of SSL/TLS. GenePattern
+Python environment using an outdated version of SSL/TLS. g2nb
 only accepts connections using TLS 1.2 or later.
 
 To fix this issue you will need to update the version of OpenSSL used by

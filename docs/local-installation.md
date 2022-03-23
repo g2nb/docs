@@ -2,13 +2,13 @@
 ---
 
 !!! note 
-    Local installation is only for those interested in running the GenePattern Notebook environment on their local machine. To use the online notebook, click on the "Login/Register" button above.
+    Local installation is only for those interested in running the g2nb environment on their local machine. To use the online notebook, click on the "Login/Register" button above.
 
-## Install GenePattern Notebook Using Docker (Recommended)
-Installing GenePattern Notebook through Docker is the recommended means of installation, as it requires the least manual configuration.
+## Install g2nb Using Docker (Recommended)
+Installing g2nb through Docker is the recommended means of installation, as it requires the least manual configuration.
 
 ### 1. Install Docker
-To install the GenePattern Notebook environment using Docker, you will first need to download the Docker application. We recommend the free Community Edition. This application will manage the GenePattern Notebook environment and automatically perform any necessary configuration.
+To install the g2nb environment using Docker, you will first need to download the Docker application. We recommend the free Community Edition. This application will manage the g2nb environment and automatically perform any necessary configuration.
 
 * [Download Docker here](https://store.docker.com/search?type=edition&offering=community)
 
@@ -19,24 +19,24 @@ Now you need to start the Docker application. If you’re using a Mac, open Appl
 
 The very first time you start Docker you may be asked if you wish to connect to DockerHub or Docker Cloud. Say yes. You may then be prompted to create an account. Follow the prompts as directed.
 
-### 3. Download the GenePattern Notebook Image
+### 3. Download the g2nb Image
 Once Docker has finished starting, locate its whale icon in the application bar and click the icon to pull down a menu. Select Kitematic in the menu. This will open Docker's user interface.
 
-Locate the search box in the window that opens and type the word “GenePattern” here to search for the correct GenePattern Notebook image.
+Locate the search box in the window that opens and type the word “GenePattern” here to search for the correct g2nb image.
 
-The correct image will be named “genepattern-notebook” and above this it will have the organization name “genepattern.” Once this image is located, click the “Create” button to download and install the image. This will take a few minutes.
+The correct image will be named “g2nb” and above this it will have the organization name “genepattern.” Once this image is located, click the “Create” button to download and install the image. This will take a few minutes.
 
 ![image](img/content_screen-shot-2016-01-05-at-10_59.jpg)
 
 ### 4. Set a Volume (Optional)
 By default, any notebooks a user creates will be saved inside the Docker image. A user wanting access to these notebook files outside of the image is advised to “set a volume.” This allows the user to select a folder on their hard drive. This folder will be available inside the notebook environment, and all notebooks the user creates will be saved there.
 
-To set a volume, once the installation is completed, a container named “genepattern-notebook” will show up in the list on the lefthand side of the Kitematic application. Click this item in the list to select it. Afterward, select the Settings tab on the far right and then select Volumes. This will present the user with the option to set a local folder. Click the Change button and then select the desired folder.
+To set a volume, once the installation is completed, a container named “g2nb will show up in the list on the lefthand side of the Kitematic application. Click this item in the list to select it. Afterward, select the Settings tab on the far right and then select Volumes. This will present the user with the option to set a local folder. Click the Change button and then select the desired folder.
 
 ![image](img/content_screen_shot_2016-02-01_at_15_57_07.png)
 
 ### 5. Start the Image
-Once the installation is completed, a container named “genepattern-notebook” will show up in the list on the lefthand side of the Kitematic application. Click this item in the list to select it.
+Once the installation is completed, a container named “g2nb” will show up in the list on the lefthand side of the Kitematic application. Click this item in the list to select it.
 
 The image may automatically start. If this is the case, the Start button will be grayed out. If it is not grayed out, go ahead and click the Start button at the top of the image.
 
@@ -45,10 +45,10 @@ Give the image a few seconds to start and then click the “popout” button to 
 ![image](img/content_screen_shot_2016-02-01_at_15_06_55.png)
 
 ### What’s Next?
-* [Using GenePattern Notebook](http://notebook.genepattern.org/user-guide/)
+* [Using g2nb](http://notebook.genepattern.org/user-guide/)
 
-## Install GenePattern Notebook Manually
-This method of installing the GenePattern Notebook Environment will set it up natively on your computer. This will require configuring the computer’s Python environment. It is recommended only for users who are familiar with the command line.
+## Install g2nb Manually
+This method of installing the g2nb Environment will set it up natively on your computer. This will require configuring the computer’s Python environment. It is recommended only for users who are familiar with the command line.
 
 The instructions below will require you to type commands into a terminal window. Mac users can access the terminal window through the following:
 
@@ -58,7 +58,7 @@ The instructions below will require you to type commands into a terminal window.
 ![image](img/content_terminal70p.png)
 
 ### 1. Install Python and required tools
-Before the GenePattern Notebook extension can be used, the Python programming language must be installed. While Macs come with Python pre-installed, we recommend the [Anaconda](http://continuum.io/downloads#27) distribution of Python from Continuum Analytics, as this distribution comes with **`pip`**, Jupyter and other necessary packages, as well as a variety of other packages useful in scientific computing. You can install the Anaconda package without interfering with other versions of Python on your system.
+Before the g2nb extension can be used, the Python programming language must be installed. While Macs come with Python pre-installed, we recommend the [Anaconda](http://continuum.io/downloads#27) distribution of Python from Continuum Analytics, as this distribution comes with **`pip`**, Jupyter and other necessary packages, as well as a variety of other packages useful in scientific computing. You can install the Anaconda package without interfering with other versions of Python on your system.
 
 To install the Anaconda distribution
 
@@ -100,11 +100,11 @@ pip install jupyter ipywidgets
 !!! note
     To install a package from PIP you may need administrator permissions, such as running the above command using the **`sudo`** (Linux, Mac) or **`runas`** (Windows) utilities.
 
-### 2. Install the GenePattern Notebook extension
+### 2. Install the g2nb extension
 The GenePattern Notebook extension can be installed from the **`pip`** package manager by entering the following command into the terminal:
 ```
 
-pip install genepattern-notebook
+pip install g2nb
 
 ```
 !!! note
@@ -145,11 +145,11 @@ Once the Jupyter notebook environment is open in your browser, it should look si
 
 ![image](img/content_screen_shot_2015-08-24_at_10_07_11-1.png)
 
-## Updating GenePattern Notebook
-GenePattern Notebook is updated regularly with new releases. To update your version of GenePattern Notebook, run the following in the terminal:
+## Updating g2nb
+g2nb is updated regularly with new releases. To update your version of GenePattern Notebook, run the following in the terminal:
 ```
 
-pip install --upgrade genepattern-notebook
+pip install --upgrade g2nb
 
 ```
 Mac users can access the terminal window through the following:
@@ -160,9 +160,9 @@ Mac users can access the terminal window through the following:
 ![image](img/content_terminal70p.png)
 
 ## What’s Next?
-* [Using GenePattern Notebook](http://genepattern-notebook.org/user-guide/)
+* [Using g2nb](http://genepattern-notebook.org/user-guide/)
 
 ##Compatibility Notes
-* **Python:** GenePattern Notebook supports Python 3.4+.
-* **Jupyter:** The GenePattern Notebook extension was developed and tested with Jupyter 5.7.
-* **Browser:** GenePattern Notebook supports Chrome, Firefox and Safari.
+* **Python:** g2nb supports Python 3.4+.
+* **Jupyter:** The g2nb extension was developed and tested with Jupyter 5.7.
+* **Browser:** g2nbsupports Chrome, Firefox and Safari.
