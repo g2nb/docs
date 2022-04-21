@@ -18,6 +18,8 @@ the [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/).
 A variety of useful Python libraries come already installed in the g2nb environment. These include pandas, matplotlib,
 scikit-learn, numpy, ndex2 and the GenePattern Python Library, among others.
 
+A complete tutorial on using the GenePattern Python Library is available as a public notebook in the [g2nb Notebook Repository](https://notebook.genepattern.org/services/sharing/notebooks/362/preview/). Additional information is available in the published [example notebooks](https://github.com/g2nb/example-notebooks/tree/master/Example%20Notebooks) on GitHub.
+
 ### 3. Send to Code
 
 The widgets provided by g2nb tools seamlessly integrate with programmatic execution. Code examples of how to reference
@@ -121,6 +123,30 @@ conda config --add pkgs_dirs ~/.local/lib/python3.9/site-packages
 conda install <package_name>      
 ```
 
+## Cytoscape
+
+[Cytoscape](https://cytoscape.org/) is an open source software platform for visualizing complex networks and integrating them with any type of attribute data.
+
+You can connect a GenePattern notebook to a Cytoscape instance running on your computer using the [py4cytoscape](https://github.com/cytoscape/py4cytoscape) library. This library comes pre-installed in the GenePattern Notebook Workspace, otherwise you may install it by executing the following command:
+
+```bash
+pip install py4cytoscape sphinx
+```
+
+Once installed, open Cytoscape on your computer and then active Cytoscape's [Jupyter-Bridge](https://github.com/cytoscape/jupyter-bridge) inside the notebook by executing the following code inside a Python cell:
+
+```python
+import py4cytoscape as p4c
+import IPython
+print(f'Loading Javascript client ... {p4c.get_browser_client_channel()} on {p4c.get_jupyter_bridge_url()}')
+browser_client_js = p4c.get_browser_client_js()
+IPython.display.Javascript(browser_client_js) # Start browser client
+```
+
+If prompted, you may need to also install the [FileTransfer](http://apps.cytoscape.org/apps/filetransfer) app inside your Cytoscape instance.
+
+Once the Python code above has executed successfully, you may call Cytoscape functions and visualize networks diectly from your notebook. Documentation for this is available on [Cytoscape's Read the Docs](https://py4cytoscape.readthedocs.io/en/latest/tutorials/index.html).
+
 ## Globus Connect
 
 [Globus](https://www.globus.org/) is a way to synchronize the files in your g2nb project directory with
@@ -211,7 +237,7 @@ variable itself. This is useful for embedding the value inside a larger string, 
 would be unwanted.
 
 This functionality can be achieved by placing the variable name inside double curly brackets. For example, embedding the
-string serialization of the variable foo would be entered into an input field as:
+string serialization of the variable `foo` would be entered into an input field as:
 
 ```
 {{ foo }}
@@ -224,7 +250,7 @@ string serialization of the variable foo would be entered into an input field as
 Existing Python functions, such as those included in third-party Python libraries, can also be used with the UI Builder.
 To display an existing function first import it and then pass the function into the constructor of the `UIBuilder`
 object. Return this object in a cell to display the resulting widget. For example, the code for displaying
-scikit-learn's KMeans function is given below.
+scikit-learn's `KMeans` function is given below.
 
 ```python
 import nbtools
@@ -239,13 +265,13 @@ By default, the widget name will be the function name, the description will be t
 parameter names will be the same as the parameters defined in the code. All of these, however, can be manually
 overridden. This is particularly useful whe providing better names or descriptions that users would find helpful.
 
-To override the default values, optional parameters may be passed into the build_ui decorator or into the `UIBuilder`
+To override the default values, optional parameters may be passed into the `build_ui` decorator or into the `UIBuilder`
 constructor. Examples overriding the widget name and description are given below.
 
 The bottom example also demonstrates overriding the canonical name of the function being rendered. This is sometimes
 helpful if the function has been imported into the code in a non-top level namespace.
 
-```
+```python
 @nbtools.build_ui(name="Simple Example",
                   description="This is an example function.")
 def example_function(param_1, param_2):
@@ -254,13 +280,11 @@ def example_function(param_1, param_2):
 
 The same effect can be also achieved when directly instantiating the `UIBuilder` object.
 
-```
-
+```python
 nbtools.UIBuilder(sklearn.cluster.KMeans,
                   name="KMeans Clustering",
                   description="Groups data into K clusters",
                   function_import="sklearn.cluster.KMeans")
-
 ```
 
 ![image](img/ui_builder_4.jpg)
@@ -399,8 +423,8 @@ def example_function(param_1, param_2):
 
 ### 11. File Parameters
 
-File parameters are intended to handle input representing a file or file-like object. They are integrated with
-g2nb widgets, such that available files will appear in a menu when a file parameter is first
+File parameters are intended to handle input representing a file or file-like object. They are integrated with 
+[UI Output](uioutput.md) widgets, such that available files will appear in a menu when a file parameter is first
 selected, thereby allowing the user to easily select the desired file.
 
 Optionally, the developer can specify the kinds of files that a file parameter accepts. This is accomplished by
@@ -447,14 +471,14 @@ def file_choice_example(param_1):
 
 ### 12. Client-side Interactivity
 
-Notebook authors who wish to integrate the UI Builder with client-side programmatic functionality can make use of the id
-and events attribute of parameters.
+Notebook authors who wish to integrate the UI Builder with client-side programmatic functionality can make use of the `id`
+and `events` attribute of parameters.
 
 The id attribute allows the author to specify an ID for the parameter's element in the DOM. As with all DOM IDs, it must
 be both unique
 and [adhere to the naming rules in the HTML specification](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id).
 
-The events attribute allows the author to attach Javascript functionality to the parameter. It should be specified as a
+The `events` attribute allows the author to attach Javascript functionality to the parameter. It should be specified as a
 dict, where the keys are Javascript events and the values are strings containing the Javascript code to be executed.
 
 An example of using both of these attributes is given below.
@@ -472,7 +496,7 @@ def example_function(first_parameter, second_parameter):
     . . .
 ```
 
-Additionally, the top-level events attribute is available for handling events associated with the UI Builder widget
+Additionally, the top-level `events` attribute is available for handling events associated with the UI Builder widget
 itself, rather than individual parameters. This accepts a dictionary pairing event names to strings containing Javscript
 to be executed when the event occurs. Supported events are presented below:
 
@@ -501,18 +525,85 @@ class. Any text annotated in this way will appear in a dropdown whenever a text 
 <span class="nbtools-text-option">Text to send to parameter</span>
 ```
 
-### 14. Other Options
+### 14. Look and Feel 
 
-The following minor features are available in the UI Builder.
+The look and feel of a UI Builder widget can be customized by setting any of the following options:
 
-* **register_tool:** Sets whether to register this function with the Notebook Tool Manager. Defaults to True.
-* **collapse:** Sets whether to collapse the UI Builder widget when the function is run. Defaults to True.
-* **function_import:** Override the import name of an existing function.
-* **origin:** Override the name of the tab the tool appears in. Defaults to either "Notebook" or the name of the module
-  the tool is imported from.
+* **color:** Sets the header and border color of the widget. (default based on the current JupyterLab theme)
+* **logo:** A URL pointing to the logo to display in the UI Builder header. Setting its value to 'None' turns off displaying the logo entirely.
+* **run_label:** Change the label on the Run buttons. (default='Run')
+* **display_header:** Toggle whether to display the UI Builder header. (default=True)
+* **display_footer:** Whether or not to display the UI Builder footer. (default=True)
 
 ```python
-@nbtools.build_ui(register_tool=False, collapse=False, function_import='example_package.example_function')
+@nbtools.build_ui(color='#0000FF', logo='http://custom.logo', run_label='Execute', display_header=False, display_footer=False)
+def example_function(first_parameter, second_parameter):
+    . . .
+```
+
+### 15. Messages
+
+These values can be set in order to display a message to the user. Usually they are used to bring attention to an error or to highlight important feedback.
+
+* **info:** Sets an informative message to display to the user in a highlighted info callout.
+* **error:** Sets an error message to display to the user in an error callout.
+
+```python
+@nbtools.build_ui(info='You must do something before running this method', error='An error was encountered performing method')
+def example_function(first_parameter, second_parameter):
+    . . .
+```
+
+```python
+uibuilder = UIBuilder(f)
+uibuilder.info = 'You must do something before running this method'
+uibuilder.error = 'An error was encountered performing method'
+```
+
+### 16. Menu Items
+
+Set `extra_menu_items` to a dict of additional menu items to display in the widget's gear menu. The key should be the label to display in the menu and the value should be a dict containing the action to perform and the code to execute. Valid actions are:
+
+* **cell:** Creates a new cell below the current one, inserts the provided Python code and executes that cell.
+* **method:** Executes the indicated function in the Python kernel.
+
+A code example is provided below.
+
+```python
+@nbtools.build_ui(extra_menu_items={
+    'Show Help Information': {
+        'action': 'cell',
+        'code': 'help(nbtools)'
+    }
+})
+def example_function(first_parameter, second_parameter):
+    . . .
+```
+
+```python
+@nbtools.build_ui(extra_menu_items={
+    'Call Function': {
+        'action': 'method',
+        'code': 'method_name'
+    }
+})
+def example_function(first_parameter, second_parameter):
+    . . .
+```
+
+### 17. Other Options
+
+The following minor features are available available in the UI Builder.
+
+* **register_tool:** Sets whether to register this function with the tool registry. Defaults to True.
+* **function_import:** Override the import name of an existing function.
+* **collapse:** Set whether the widget collapses upon submission (default=True).
+* **collapsed:** Set whether the widget is currently expanded or collapsed (default=True).
+* **busy:** Set whether the widget controls are disabled because it is busy. (default=False)
+* **license:** Sets the test of a license ageement to be displayed and agreed to before the tool is executed, as well as whether the license has already been agreed to or not. This parameter expects a dict with a 'text' key for the license text and a 'callback' key with a boolean value specifying whether the user has already agreed to the license. A callback function can be attached as an observer to the 'callback' value.
+                
+```python
+@nbtools.build_ui(register_tool=False, function_import='example_package.example_function', collapse=False, collapsed=False, busy=True)
 def example_function(first_parameter, second_parameter):
     . . .
 ```
@@ -627,25 +718,113 @@ nbtools.UIOutput()
 ```
 
 ### 2. Specify Parameters
-
 The `UIOutput` widget supports a number of parameters, which should be set to present as output. Options include:
 
+* **appendix:** An ipywidget instance that will be appended to the `UIOutput` widget.
+* **collapsed:** Set whether the widget is currently expanded or collapsed (default=True).
 * **description:** A text blurb describing what is being output.
 * **files:** A list of URLs to files being output by the widget.
 * **name:** A name to display in the header of the widget.
-* **status:** A terse indicator of the output status. Can be dynamically updated as an analysis progresses (see below).
+* **status:** A terse indicator of the output status.
 * **text:** Intended for long text output, such as logging or other information.
+* **visualization:** A URL that will be displayed in an iframe or an HTML blob that will be displayed
+* **origin:** Set an origin identifier so that event callbacks can be limited to UIOutput widgets with a particular origin. Usually this origin matches the origin of the `UIBuilder` widget which created the UIOutput.
+
+```
+import ipywidgets
+import nbtools
+# Create an ipywidget to append
+text_input = ipywidgets.Text()
+nbtools.UIOutput(appendix=text_input, collapsed=True, description='Output from the analysis', 
+                 files=['http://foo.bar/foo.txt', 'http://bar.foo/bar.rds'], name='Job Output', status='Running', 
+                 text='Running job...', visualization='http://foo.bar/heatmap.html')
+```  
 
 ### 3. Dynamically Updating Status
 
-The status of a `UIOutput` widget can be dynamically updated by setting the status property of the widget object. This is
-useful for long-running analyses and allows a function to alert the user when an analysis is complete, or when a new
-stage of analysis has been reached.
+The parameters of a `UIOutput` widget can be dynamically updated by setting the relevant property of the widget object.
+ This is useful for long-running analyses, as it can be used to update the status and other information as the analysis 
+ progresses.
 
-```python
-import nbtools
-
+```
 uio = nbtools.UIOutput(status="Running")
 # Perform long-running analysis here
 uio.status = "Complete"
-```                
+uio.visualization = "http://foo.bar/heatmap.html"
+```              
+
+### 4. Look and Feel 
+
+The look and feel of a UI Output widget can customized by setting any of the following options:
+
+* **color:** Sets the header and border color of the widget. (default based on the current JupyterLab theme)
+* **logo:** A URL pointing to the logo to display in the UI Output header. 
+
+```python
+nbtools.UIOutput(color='#0000FF', logo='http://custom.logo')
+```
+
+### 5. Messages
+
+These values can be set in order to display a message to the user. Usually they are used to bring attention to an error or to highlight important feedback.
+
+* **info:** Sets an informative message to display to the user in a highlighted info callout.
+* **error:** Sets an error message to display to the user in an error callout.
+
+```python
+UIOutput(info='Something you should know about this output.', error='A problem with this output.')
+```
+
+```python
+uioutput = UIOutput()
+uioutput.info = 'Something you should know about this output.'
+uioutput.error = 'A problem with this output.'
+```
+
+### 6. Menu Items
+
+* **extra_file_menu_items:** A dict of additional menu items to appear in the menu for each file.
+* **extra_menu_items:** A dict of additional menu items to display in the widget's gear menu. 
+
+The key for all menu items should be the label to display in the menu and the value should be a dict containing the 
+action to perform and the code to execute. Valid actions are:
+
+* **cell:** Creates a new cell below the current one, inserts the provided Python code and executes that cell.
+* **method:** Executes the indicated function in the Python kernel.
+
+A code example is provided below.
+
+```python
+nbtools.UIOutput(extra_menu_items={
+    'Show Help Information': {
+        'action': 'cell',
+        'code': 'help(nbtools)'
+    }
+})
+```
+
+```python
+nbtools.UIOutput(extra_menu_items={
+    'Call Function': {
+        'action': 'method',
+        'code': 'method_name'
+    }
+})
+```
+
+In addition, menu items created for the file menus will have the following variables available for use in their actions:
+
+* **file_name:** The name of the file the action is being expected on.
+* **type:** The type of the file the action is being expected on.
+* **widget_name:** The name of the widget the action is being called from.
+
+A code example is provided below.
+
+```python
+nbtools.UIOutput(extra_file_menu_items={
+    'Get File': {
+        'action': 'cell',
+        'code': 'package.get_file("{{file_name}}")'
+    }
+})
+```
