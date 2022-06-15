@@ -3,7 +3,7 @@
 
 ## g2nb Workspace
 
-Release updates for the [g2nb Workspace](https://notebook.genepattern.org/).
+Release updates for the [g2nb Workspace](https://workspace.g2nb.org/).
 
 ------------------------------------------------------------------------
 
