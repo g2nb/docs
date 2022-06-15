@@ -18,7 +18,7 @@ markdown_extensions:
   
 nav:
   - 'index.md'
-  - 'g2nb Homepage': 'https://notebook.genepattern.org'
+  - 'g2nb Homepage': 'https://www.g2nb.org'
   - Documentation:
     - 'programmatic.md'
     - 'local-installation.md'
