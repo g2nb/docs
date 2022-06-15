@@ -3,11 +3,11 @@
 
 ---
 
-This is the technical documentation for g2nb. [For the general user documentation go here](http://website.genepattern.org/docs).
+This is the technical documentation for g2nb. [For the general user documentation go here](https://www.g2nb.org).
 
 ### What is g2nb?
 
-The [**g2nb**](http://notebook.genepattern.org) project integrates genomic analysis platforms with the Jupyter ecosystem, 
+The [**g2nb**](https://www.g2nb.org) project integrates genomic analysis platforms with the Jupyter ecosystem, 
 allowing researchers to create documents that interleave formatted text, graphics, other multimedia, executable code, 
 and remote analyses, such as those hosted by [GenePattern](https://genepattern.org) or [Galaxy](https://usegalaxy.org), 
 thereby creating a single "research narrative" that combines scientific discussion and analyses.
@@ -23,7 +23,7 @@ we recommend you take a look at the [**Jupyter Quickstart Guide**](https://jupyt
 
 ## Additional Resources
 
-- [**g2nb Homepage**](https://notebook.genepattern.org)
+- [**g2nb Homepage**](https://www.g2nb.org)
 - [**GitHub Repository**](https://github.com/g2nb/g2nb)
 - [**Project Jupyter**](http://jupyter.org/)
 - [**Python**](https://www.python.org/)
