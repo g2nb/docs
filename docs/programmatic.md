@@ -127,7 +127,7 @@ conda install <package_name>
 
 [Cytoscape](https://cytoscape.org/) is an open source software platform for visualizing complex networks and integrating them with any type of attribute data.
 
-You can connect a GenePattern notebook to a Cytoscape instance running on your computer using the [py4cytoscape](https://github.com/cytoscape/py4cytoscape) library. This library comes pre-installed in the GenePattern Notebook Workspace, otherwise you may install it by executing the following command:
+You can connect a notebook to a Cytoscape instance running on your computer using the [py4cytoscape](https://github.com/cytoscape/py4cytoscape) library. This library comes pre-installed in the g2nb Workspace, otherwise you may install it by executing the following command:
 
 ```bash
 pip install py4cytoscape sphinx
