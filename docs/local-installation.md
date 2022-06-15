@@ -1,7 +1,7 @@
 # Local Installation
 
 !!! note Local installation is for those interested in running the g2nb environment on their local machine. To use the
-online workspace, go to the [g2nb Notebook Workspace](https://notebook.genepattern.org).
+online workspace, go to the [g2nb Notebook Workspace](https://workspace.g2nb.org).
 
 ## Install g2nb Using Docker (Recommended)
 
@@ -64,7 +64,7 @@ Give the image a few seconds to start and then click the “popout” button to 
 
 ### What’s Next?
 
-* [Using g2nb](http://notebook.genepattern.org/user-guide/)
+* [Using g2nb](https://www.g2nb.org/user-guide/)
 
 ## Install g2nb Manually
 
@@ -182,7 +182,7 @@ Once the Jupyter environment is open in your browser, it should look similar to 
 
 ## Updating g2nb
 
-g2nb is updated regularly with new releases. To update your version of GenePattern Notebook, run the following in the
+g2nb is updated regularly with new releases. To update your version of g2nb, run the following in the
 terminal:
 
 ```bash
@@ -198,7 +198,7 @@ Mac users can access the terminal window through the following:
 
 ## What’s Next?
 
-* [Using g2nb](https://notebook.genepattern.org/user-guide/)
+* [Using g2nb](https://www.g2nb.org/user-guide/)
 
 ## Compatibility Notes
 
