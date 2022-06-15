@@ -14,8 +14,7 @@ within a Jupyter environment. These tools include:
 *   Python libraries for programmatically working with the results of
     the analyses.
 
-To use the public g2nb Workspace, you will need to [register for an account](https://notebook.genepattern.org/). g2nb 
-usage is free and the software is open source under the BSD license.
+g2nb usage is free and the software is open source under the BSD license.
 
 ## 2. What is GenePattern?
 
