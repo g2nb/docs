@@ -2,7 +2,7 @@
 ---
 
 ## Help Forum
-[Join our forum]((https://groups.google.com/group/genepattern-help) to stay updated with g2nb. You can configure your personal 
+[Join our forum](https://groups.google.com/group/genepattern-help) to stay updated with g2nb. You can configure your personal 
 [email and membership settings](https://support.google.com/groups/answer/1067205?hl=en) for the group to send updates 
 for the group or individual topics within it.
 
