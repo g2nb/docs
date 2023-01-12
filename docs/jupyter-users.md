@@ -7,7 +7,7 @@ of tools for interacting with powerful analysis platforms from
 within a Jupyter environment. These tools include:
 
 *   Visual widgets for running bioinformatic analyses and submitting
-    these analyses to a GenePattern or Galaxy server.
+    these analyses to a GenePattern or Galaxy server and for starting interactive visualizations using IGV and CytoScape.
 *   Tools for visually sending results to downstream steps in a
     bioinformatic workflow.
 *   A WYSIWYG-style rich text editor for Markdown cells.
