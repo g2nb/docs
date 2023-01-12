@@ -14,7 +14,7 @@ within a Jupyter environment. These tools include:
 *   Python libraries for programmatically working with the results of
     the analyses.
 
-g2nb usage is free and the software is open source under the BSD license.
+g2nb usage is free and the software is open source under the [BSD license](https://github.com/g2nb/g2nb/blob/main/LICENSE.txt).
 
 ## 2. What is GenePattern?
 
@@ -68,3 +68,5 @@ To use render a function, simply import the `UIBuilder` class from the
 `nbtools` package and pass the function to its constructor.
 
 ![image](img/call-widget.jpg)
+
+For more information, [go here](https://docs.g2nb.org/en/latest/programmatic/#ui-builder)
