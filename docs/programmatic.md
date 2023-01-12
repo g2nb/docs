@@ -1,6 +1,6 @@
 # Programmatic Features
 
-!!! note In addition to the basic, publishing and sharing features intended for use by both non-programming and
+In addition to the basic, publishing and sharing features intended for use by both non-programming and
 programming users, the g2nb environment also provides a variety of features intended primarily for use by programmers.
 
 ## Programmatic Features
