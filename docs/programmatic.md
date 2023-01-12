@@ -88,8 +88,7 @@ shown below.
 
 While the g2nb Workspace comes with many popular bioinformatic and machine learning packages already
 installed, it also provides the ability to customize your workspace by installing new libraries. Behind the scenes, each
-kernel in the Workspace is encapsulated in a conda environment. To install a new library, simply
-activate the appropriate environment and then install the package through either the PIP or conda package managers.
+kernel in the Workspace is encapsulated in a conda environment.
 
 #### Installing Through PIP
 
