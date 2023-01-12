@@ -1,22 +1,22 @@
 # Programmatic Features
 
 !!! note In addition to the basic, publishing and sharing features intended for use by both non-programming and
-programming users, the g2nb environment also provides a variety of features intended primarily for use by coders.
+programming users, the g2nb environment also provides a variety of features intended primarily for use by programmers.
 
 ## Programmatic Features
 
 ### 1. Code Cells
 
-Code cells allow a user to type in execute Python code. They are the default type of cell. Simply enter the Python code
+Code cells allow a user to execute Python code. They are the default type of cell. Simply enter the Python code
 you want to run and then click the ![forward](img/fa-forward.png) (run cell) button in the notebook toolbar.
 
-More information on code cells and their variousoptions is available in
+More information on code cells and their various options is available in
 the [Jupyter documentation](https://jupyter.readthedocs.io/en/latest/).
 
 ### 2. Python Libraries
 
 A variety of useful Python libraries come already installed in the g2nb environment. These include pandas, matplotlib,
-scikit-learn, numpy, ndex2 and the GenePattern Python Library, among others.
+scikit-learn, numpy, ndex2 and the GenePattern Python Library, among others. See the [Packages, Kernels, and Extensions page](https://www.g2nb.org/packages-kernels-extensions/) for more information.
 
 A complete tutorial on using the GenePattern Python Library is available as a public notebook in the [g2nb Notebook Repository](https://notebook.genepattern.org/services/sharing/notebooks/362/preview/). Additional information is available in the published [example notebooks](https://github.com/g2nb/example-notebooks/tree/master/Example%20Notebooks) on GitHub.
 
@@ -34,24 +34,17 @@ This will add a new cell below prefilled with the python to retrieve the file.
 
 ### 4. Send to Dataframe
 
-g2nb also provides functionality for common bioinformatics file formats, allowing them seamlessly
-integrate with [Pandas](http://pandas.pydata.org/), a popular Python data analysis library.
+For file formats that represent array-type data, g2nb provides functionality allowing them to be loaded directly to a [Pandas](http://pandas.pydata.org/) dataframe. Currently supported file types are [GCT](https://www.genepattern.org/file-formats-guide#GCT) and [ODF](https://www.genepattern.org/file-formats-guide#ODF) file formats. 
 
-Both
-the [GCT and ODF file formats](http://software.broadinstitute.org/cancer/software/genepattern/file-formats-guide/?target=_blank)
-are easily loaded as Pandas Dataframes. Code examples of how to load these files are available
-by clicking a GCT or ODF job result and selecting “Send to Dataframe” in the menu.
+To load a compatible file as a dataframe, click on the job result and select “Send to Dataframe” in the menu.
 
 ![image](img/programmatic_send_to_dataframe_output.png)
 
 ### 5. Python Variable Input
 
 As part of the seamless integration between Python and g2nb, Python variables may be directly used as input in
-g2nb tool cells. To use a Python variable as input, first define the variable in a code cell, then in a
-tool cell, enter the variable name.
-
-When the "Run" button is clicked to launch the analysis, the notebook will first obtain the value of the variable used
-as input. As many tools expect a string, non-string variables will be cast as strings when they are evaluated.
+g2nb tool cells. To use a Python variable as input, enter it into the input field of an analysis cell. When the "Run" button is clicked to launch the analysis, the notebook will evaluate the variable and pass the result as the input parameter.
+Note: variables are cast as strings when they are evaluated.
 
 ### 6. R Support
 
