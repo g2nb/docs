@@ -21,11 +21,11 @@ With Docker installed and running, in a browser open tab for [g2nb/lab on Docker
 
 You can install this image into your Docker in a terminal window with the command,  
 
-``
+```
 
 docker pull g2nb/lab
 
-``
+```
 
 This may take a few minutes to download.  Once the download completes you should see the g2nb/lab image appear on the *images* tab of *Docker Desktop*.
 ![image](img/dockerdesktop1.png)
