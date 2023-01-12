@@ -67,6 +67,6 @@ input.
 To use render a function, simply import the `UIBuilder` class from the
 `nbtools` package and pass the function to its constructor.
 
-![image](img/ui-builder.png)
+![image](img/ju_uibuilder.png)
 
 For more information, [go here](https://docs.g2nb.org/en/latest/programmatic/#ui-builder)
