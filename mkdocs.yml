@@ -17,7 +17,6 @@ markdown_extensions:
 #         baselevel: 5
   
 nav:
-  - 'README.md'
   - 'g2nb Homepage': 'https://www.g2nb.org'
   - Documentation:
     - 'programmatic.md'
