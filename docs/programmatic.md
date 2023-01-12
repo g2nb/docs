@@ -46,6 +46,8 @@ As part of the seamless integration between Python and g2nb, Python variables ma
 g2nb tool cells. To use a Python variable as input, enter it into the input field of an analysis cell. When the "Run" button is clicked to launch the analysis, the notebook will evaluate the variable and pass the result as the input parameter.
 Note: variables are cast as strings when they are evaluated.
 
+![image](img/g2nb%20evaluate%20Python%20variable.png)
+
 ### 6. R Support
 
 The g2nb platform supports R through the use of R magics command. To begin using R, you first
@@ -67,20 +69,16 @@ given below.
 
 ![image](img/programmatic_r_support.png)
 
-### 7. Files in Markdown Cells
+### 7. Using externally-hosted files in a g2nb notebook
 
-Sometimes it is beneficial to the narrative of a notebook to link to externally-hosted files in a markdown cell and then
-to use those files in a later programmatic step.
-
-g2nb makes doing this easy. Just give the link to the external file the `nbtools-markdown-file` class and
-the external file will automatically appear as an option in g2nb's file menus. An example is given
-below.
+To add an externally-hosted file to the drop-down list of inputs for a g2nb analysis, add the
+ `nbtools-markdown-file` class to the file as shown below. 
 
 ```html
 <a class="nbtools-markdown-file" href="http://example.url">The text to link here.</a>
 ```
 
-An alternative is to make your links appear as [UI Builder](#ui-builder) output. To do this, give an array of 1 or more
+To provide an externally-hosted file with the g2nb data flow features (Send to Code, Send to Dataframe, Send to analysis cell, etc.), format your links  as [UI Builder](#ui-builder) outputs. To do this, provide an array of 1 or more
 links to the `nbtools.UIOutput()` method and return it at the end of a cell. An example (with code also displayed) is 
 shown below.
 
@@ -142,8 +140,7 @@ Once the Python code above has executed successfully, you may call Cytoscape fun
 
 ## Globus Connect
 
-[Globus](https://www.globus.org/) is a way to synchronize the files in your g2nb project directory with
-those on your personal computer or elsewhere.
+[Globus](https://www.globus.org/) is a way to reliably transfer files of any size between web-based resources. It can be used to transfer files between your g2nb workspace and your local storage, or any Globus endpoint. If you do not have access to a Globus endpoint, you can create a personal endpoint with Globus Connect.
 
 To use Globus Connect, you will first need to sign up for a free [Globus account](https://app.globus.org/). You will
 also need to log in to the Globus file manager and create a personal endpoint.
