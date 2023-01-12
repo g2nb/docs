@@ -69,4 +69,4 @@ To use render a function, simply import the `UIBuilder` class from the
 
 ![image](img/ju_uibuilder.png)
 
-For more information, [go here](https://docs.g2nb.org/en/latest/programmatic/#ui-builder)
+For more information, see the [UI Builder documentation](https://docs.g2nb.org/en/latest/programmatic/#ui-builder)
