@@ -45,9 +45,10 @@ mounted to the container as a volume. Select the desired local folder and for th
 
 ### 3.B Run without a volume
 
-If you choose not to set a volumen, any notebooks a user creates will be saved inside the Docker image. 
+If you choose not to set a volume, any notebooks a user creates will be saved inside the Docker image. 
 Once the image download is completed, a container named “g2nb/lab” will show up in the images list on the lefthand side of the
 Docker Desktop application. Click this item in the list to select it and then click the 'Run' button on the right hand side.
+![image](img/dockerdesktop3.png)
 
 ### 4. Restart a g2nb Container
 
@@ -55,6 +56,7 @@ If g2nb has been run before and stopped (and/or the machine rebooted) there will
 *containers* section of the Docker Desktop Application. If this is the case, you can restart, or stop the container using the controls 
 on the *Containers* tab.  See the [Docker Desktop Documentation](https://docs.docker.com/desktop/) for more details.
 
+![image](img/dockerdesktop4.png)
 
 ### What’s Next?
 
@@ -88,7 +90,7 @@ To install the required tools individually (not required if you install Anaconda
 If you are using a distribution of Python that does not come with the **`pip`** utility, it must first be installed. To
 install **`pip`**:
 
-* Download the installation script ([click here](http://bootstrap.pypa.io/get-pip.py))
+* Download the installation script ([getpip.py](http://bootstrap.pypa.io/get-pip.py))
 * Open a terminal window (see above for instructions)
 * Navigate to the directory where you downloaded the installation script
 * Tun the installation script by entering the following command into the terminal
@@ -99,7 +101,7 @@ python get-pip.py
 
 ```
 
-!!! note To install **`pip`** you may need administrator permissions, such as running the above command using
+**Note** To install **`pip`** you may need administrator permissions, such as running the above command using
 the **`sudo`** (Linux, Mac) or **`runas`** (Windows) utilities. If you try the above command and receive a message that
 you do not have permissions to execute it, type
 
@@ -136,7 +138,7 @@ pip install g2nb
 
 ```
 
-!!! note To install a package using **`pip`** you may need administrator permissions, such as running the above command
+*Note* To install a package using **`pip`** you may need administrator permissions, such as running the above command
 using the **`sudo`** (Linux, Mac) or **`runas`** (Windows) utilities. You may also need to restart your terminal window,
 if you have only just installed Anaconda.
 
@@ -178,13 +180,6 @@ terminal:
 ```bash
 pip install --upgrade g2nb
 ```
-
-Mac users can access the terminal window through the following:
-
-* Click the Launchpad icon in your dock: ![image](img/content_launchpad-icon_40.png)
-* In the Search bar, type Terminal, and then click on the Terminal icon:
-
-![image](img/content_terminal70p.png)
 
 ## What’s Next?
 
