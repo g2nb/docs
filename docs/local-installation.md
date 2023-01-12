@@ -1,6 +1,6 @@
 # Local Installation
 
-!!! note Local installation is for those interested in running the g2nb environment on their local machine. To use the
+**Note:** Local installation is for those interested in running the g2nb environment on their local machine. To use the
 online workspace, go to the [g2nb Notebook Workspace](https://workspace.g2nb.org).
 
 ## Install g2nb Using Docker (Recommended)
@@ -9,58 +9,45 @@ Installing g2nb through Docker is the recommended means of installation, as it r
 
 ### 1. Install Docker
 
-To install the g2nb environment using Docker, you will first need to download the Docker application. We recommend the
-free Community Edition. This application will manage the g2nb environment and automatically perform any necessary
-configuration.
+To install the g2nb environment using Docker, you will first need to download the Docker Desktop application. This application will manage the g2nb environment and automatically perform any necessary configuration.
 
-* [Download Docker here](https://store.docker.com/search?type=edition&offering=community)
+* [Docker Desktop installation and User Guide](https://docs.docker.com/desktop/)
 
-Download Docker using the above link, then run the installer, following the directions when prompted.
+Once Docker Desktop is installed it will start and launch the Docker Quick Start Guide.  Use this guide to familiarize yourself with Docker Desktop.  
 
-### 2. Start Docker
+### 2. Download the g2nb Image
 
-Now you need to start the Docker application. If you’re using a Mac, open Applications and look for an icon called
-Docker. It looks like a whale. Click its icon to start the application.
+With Docker installed and running, in a browser open tab for [g2nb/lab on DockerHub](https://hub.docker.com/r/g2nb/lab/tags) to see the available versions of the g2nb image. In most cases you will want to use the version tagged as *latest*.  You will get this version also if you leave the version blank.
 
-The very first time you start Docker you may be asked if you wish to connect to DockerHub or Docker Cloud. Say yes. You
-may then be prompted to create an account. Follow the prompts as directed.
+You can install this image into your Docker in a terminal window with the command,  ``docker pull g2nb/lab``.
 
-### 3. Download the g2nb Image
+This may take a few minutes to download.
 
-Once Docker has finished starting, locate its whale icon in the application bar and click the icon to pull down a menu.
-Select Kitematic in the menu. This will open Docker's user interface.
 
-Locate the search box in the window that opens and type the word “g2nb” here to search.
-
-The correct image will be named `g2nb/lab`. Once this image
-is located, click the “Create” button to download and install the image. This will take a few minutes.
-
-![image](img/content_screen-shot-2016-01-05-at-10_59.jpg)
-
-### 4. Set a Volume (Optional)
+### 3.A Run with a Volume (Optional)
 
 By default, any notebooks a user creates will be saved inside the Docker image. A user wanting access to these notebook
 files outside of the image is advised to “set a volume.” This allows the user to select a folder on their hard drive.
 This folder will be available inside the notebook environment, and all notebooks the user creates will be saved there.
 
-To set a volume, once the installation is completed, a container named “g2nb will show up in the list on the left-hand
-side of the Kitematic application. Click this item in the list to select it. Afterward, select the Settings tab on the
-far right and then select Volumes. This will present the user with the option to set a local folder. Click the Change
-button and then select the desired folder.
+To set a volume, once the installation is completed, an image named “g2nb/lab" will show up in the list on the *Images* tab of the 
+Docker Desktop application. Click this item in the list to select it. Afterward, select the *Run button* on the
+far right and then select *Optional Settings*. This will present the user with the option to set a local folder to be 
+mounted to the container as a volume. Select the desired local folder and for the *Continer Path* use ``/home/jovyan``.
 
-![image](img/content_screen_shot_2016-02-01_at_15_57_07.png)
 
-### 5. Start the Image
+### 3.B Run without a volume
 
-Once the installation is completed, a container named “g2nb” will show up in the list on the lefthand side of the
-Kitematic application. Click this item in the list to select it.
+If you choose not to set a volumen, any notebooks a user creates will be saved inside the Docker image. 
+Once the image download is completed, a container named “g2nb/lab” will show up in the images list on the lefthand side of the
+Docker Desktop application. Click this item in the list to select it and then click the 'Run' button on the right hand side.
 
-The image may automatically start. If this is the case, the Start button will be grayed out. If it is not grayed out, go
-ahead and click the Start button at the top of the image.
+### 4. Restart a g2nb Container
 
-Give the image a few seconds to start and then click the “popout” button to the right of “Web Preview” to open it.
+If g2nb has been run before and stopped (and/or the machine rebooted) there will already be a g2nb/lab container listed in the
+*containers* section of the Docker Desktop Application. If this is the case, you can restart, or stop the container using the controls 
+on the *Containers* tab.  See the [Docker Desktop Documentation](https://docs.docker.com/desktop/) for more details.
 
-![image](img/content_screen_shot_2016-02-01_at_15_06_55.png)
 
 ### What’s Next?
 
@@ -74,10 +61,6 @@ the computer’s Python environment. It is recommended only for users who are fa
 The instructions below will require you to type commands into a terminal window. Mac users can access the terminal
 window through the following:
 
-* Click the Launchpad icon in your dock: ![image](img/content_launchpad-icon_40.png)
-* In the Search bar, type Terminal, and then click on the Terminal icon:
-
-![image](img/content_terminal70p.png)
 
 ### 1. Install Python and required tools
 
