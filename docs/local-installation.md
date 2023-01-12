@@ -19,9 +19,16 @@ Once Docker Desktop is installed it will start and launch the Docker Quick Start
 
 With Docker installed and running, in a browser open tab for [g2nb/lab on DockerHub](https://hub.docker.com/r/g2nb/lab/tags) to see the available versions of the g2nb image. In most cases you will want to use the version tagged as *latest*.  You will get this version also if you leave the version blank.
 
-You can install this image into your Docker in a terminal window with the command,  ``docker pull g2nb/lab``.
+You can install this image into your Docker in a terminal window with the command,  
 
-This may take a few minutes to download.
+``
+
+docker pull g2nb/lab
+
+``
+
+This may take a few minutes to download.  Once the download completes you should see the g2nb/lab image appear on the *images* tab of *Docker Desktop*.
+![image](img/dockerdesktop1.png)
 
 
 ### 3.A Run with a Volume (Optional)
@@ -33,8 +40,8 @@ This folder will be available inside the notebook environment, and all notebooks
 To set a volume, once the installation is completed, an image named “g2nb/lab" will show up in the list on the *Images* tab of the 
 Docker Desktop application. Click this item in the list to select it. Afterward, select the *Run button* on the
 far right and then select *Optional Settings*. This will present the user with the option to set a local folder to be 
-mounted to the container as a volume. Select the desired local folder and for the *Continer Path* use ``/home/jovyan``.
-
+mounted to the container as a volume. Select the desired local folder and for the *Container Path* use ``/home/jovyan``.
+![image](img/dockerdesktop2.png)
 
 ### 3.B Run without a volume
 
