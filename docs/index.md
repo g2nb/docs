@@ -1,5 +1,5 @@
 
-# g2nb Technical Documentation
+# g2nb Documentation
 
 ---
 
