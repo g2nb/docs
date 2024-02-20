@@ -817,3 +817,61 @@ nbtools.UIOutput(extra_file_menu_items={
     }
 })
 ```
+
+## Data Panel
+
+The Data Panel is a pane in g2nb that gives easy access the data currently being worked with in the notebook. g2nb-enabled tools are encouraged to register their data with the panel. Data can be accessed or queried from its registry using the following method calls.
+
+### 1. Data Object
+
+Files or other data are registered with the Data Panel using an object of the `Data` class. Objects of this class have the following properties:
+
+* **origin:** A string representing the origin of the data. This string should ideally match the origin string of any tools created using the UI Builder or UI Output widgets.
+* **group:** A string representing any subgrouping of the data under the origin. This might be used to represent categories, directories, job IDs or similar.
+* **uri:** An identifier unique to the data within the chosen origin. Often this is a file path, URL or UUID.
+* **kind:** A string identifier of the format the data is in. Often this is a file extension or mime-type. This string should match the listed kind of any relevant file input listed within a UI Builder widget.
+* **load:** An optional function that gets executed when the data is loaded. A reference to the `Data` object is passed as a parameter to the function.
+
+```python
+data = nbtools.Data(origin='Tool Name', group='Misc. Data', uri='./tabular.csv', kind='csv', load=lambda d: print(d))
+```
+
+### 2. Register Data
+
+Data can be registered with the panel by passing a `Data` object to the `DataManager.register()` method. Similarly, a list of `Data` objects can be registered by passing the list to the `DataManager.register_all()` method. The `DataManager` itself is a singleton that can be accessed using the `DataManager.instance()` method.
+
+```python
+# Register data represented in a Data object
+nbtools.DataManager.instance().register(data)
+
+# Register a list of data objects
+nbtools.DataManager.instance().register_all([data1, data2, data3])
+```
+
+### 3. Unregister Data
+
+Data can be removed from the registry by passing its matching `origin` and `uri` to the `DataManager.unregister()` method.
+
+```python
+# Unregister data
+nbtools.DataManager.instance().unregister(origin='Notebook', uri='./tabular.csv')
+```
+
+### 4. Data Exists
+
+You can check whether or not data with a specific `origin` and `uri` has been registered using the `DataManager.exists()` method.
+
+```python
+# Does this data exist in the registry? Returns a boolean value.
+nbtools.DataManager.instance().exists(origin='Notebook', uri='./tabular.csv')
+```
+
+### 5. List Data
+
+Finally, you can obtain a list of all currently registered data by calling the `DataManager.list()` method.
+
+```python
+# Iterate over all data in the registry
+for d in nbtools.DataManager.instance().list():
+    print(d)
+```
