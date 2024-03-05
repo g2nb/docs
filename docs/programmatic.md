@@ -353,6 +353,7 @@ Supported types include:
   determined.
 * **Number:** Accepts any numerical value and renders in a notebook as an HTML number input.
 * **Password:** Works exactly like a text input, but obfuscates the input value as a password field.
+* **Color:** Allows the user to select a color from the system's color picker interface.
 * **Choice:** When provided with a list of choices, this input will render as a dropdown parameter, with the default
   value selected. Choice parameters are described in their own section below.
 * **Bool:** A boolean input representing True and False. Renders as a choice parameter with those two choices.
