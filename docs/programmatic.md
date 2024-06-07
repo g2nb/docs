@@ -713,7 +713,7 @@ The `UIOutput` widget supports a number of parameters, which should be set to pr
 * **appendix:** An ipywidget instance that will be appended to the `UIOutput` widget.
 * **collapsed:** Set whether the widget is currently expanded or collapsed (default=True).
 * **description:** A text blurb describing what is being output.
-* **files:** A list of URLs to files being output by the widget.
+* **files:** A list of URLs to files being output by the widget, or a list of (display name, value, kind) tuples.
 * **name:** A name to display in the header of the widget.
 * **status:** A terse indicator of the output status.
 * **text:** Intended for long text output, such as logging or other information.
@@ -869,10 +869,20 @@ nbtools.DataManager.instance().exists(origin='Notebook', uri='./tabular.csv')
 
 ### 5. List Data
 
-Finally, you can obtain a list of all currently registered data by calling the `DataManager.list()` method.
+You can obtain a list of all currently registered data by calling the `DataManager.list()` method.
 
 ```python
 # Iterate over all data in the registry
 for d in nbtools.DataManager.instance().list():
+    print(d)
+```
+
+### 5. Filter Data
+
+Finally, you may obtain a filtered list of all currently registered data by calling the `DataManager.filter()` method.
+
+```python
+# Iterate over all registered data with the 'Notebook' origin
+for d in nbtools.DataManager.instance().list(origin='Notebook'):
     print(d)
 ```
