@@ -1,6 +1,6 @@
 site_name: Documentation
 theme: 
-  name: 'rtd-dropdown'
+  name: readthedocs
   collapse_by_default: true
 # use_directory_urls: true
 repo_url: https://github.com/g2nb/docs
